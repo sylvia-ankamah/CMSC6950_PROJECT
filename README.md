@@ -1,6 +1,6 @@
-#CMSC6950:MANNKENDALL TREND TEST
+# CMSC6950:MANNKENDALL TREND TEST
 
-#SYLVIA ANKAMAH
+# SYLVIA ANKAMAH
 
 Software:https://github.com/mmhs013/pyMannKendall
 
@@ -10,7 +10,7 @@ Data Source:
 https://raw.githubusercontent.com/jbrownlee/Datasets/master/daily-total-female-births.csv
 https://raw.githubusercontent.com/jbrownlee/Datasets/master/shampoo.csv
 
-#Dependencies
+# Dependencies
 Matplotlib
 Pandas
 Numpy
