@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 import pymannkendall as mk
 import matplotlib.pyplot as plt
-%matplotlib inline
 import statsmodels.api as sm
+import pickle as pkl
 
 # IMPORTING THE FIRST DATA SET
 Birth_data = pd.read_csv("daily-total-female-births.csv",parse_dates=['Date'],index_col='Date')
@@ -14,35 +14,15 @@ Birth_data = pd.read_csv("daily-total-female-births.csv",parse_dates=['Date'],in
 # SUMMARY STATISTICS
 Birth_data.head()
 Birth_data.describe()
+# save intermediate results for later visualization
+with open('processed_data.pkl', 'wb') as filehandle:
+    pkl.dump(Trend_plot1.py, filehandle)
 
-# GRAPH 1
 
-fig_1=Birth_data.plot(figsize=(12,8));
-plt.title = ('Trend test')
-fig_1.figure.savefig('Birth_data_Trend_plot.png')
-
-# GRAPH 2
-
-fig, ax = plt.subplots(figsize=(12, 8))
-fig_2 =sm.graphics.tsa.plot_acf(Birth_data, lags=20, ax=ax);
-ax.set(xlabel= "Dates", ylabel= "Births", title="AUTOCORRELATION")
-fig_2.savefig('BIRTH_DATA_ACF_PLOT.png')sm.graphics.tsa.plot_acf(Birth_data, lags=20, ax=ax)
 
 # MANNKENDALL TREND TEST
+Birth_data = pd.read_csv("daily-total-female-births.csv",parse_dates=['Date'],index_col='Date')  #Birth_data
 mk.original_test(Birth_data, alpha=0.05)
-
-# Graph 3
-data = Birth_data
-
-fig, ax = plt.subplots(figsize=(12, 8))
-res = mk.original_test(data)
-trend_line = np.arange(len(data)) * res.slope + res.intercept
-
-ax.plot(data)
-ax.plot(data.index, trend_line)
-ax.legend(['data', 'trend line'])
-ax.set(xlabel= "Dates", ylabel= "Births", title="Trend line")
-fig.savefig('Birth_data_Trendline.png')
 
 
 # IMPORTING SECOND DATA SET
@@ -89,7 +69,7 @@ fig.savefig('SHAMPOO_DATA_TRENDLINE.png')
 Malaria_data = pd.read_csv("Malaria_data.csv",parse_dates=['Date'],index_col='Date')
 
 # SUMMARY STATISTICS
- Malaria_data.head()
+Malaria_data.head()
 Malaria_data.describe()
 # GRAPH 1
 fig_4=Malaria_data.plot(figsize=(12,8))
@@ -104,4 +84,4 @@ fig.savefig('MALARIA_DATA_ACF_PLOT.png')
 
 #TREND TEST
 mk.hamed_rao_modification_test(Malaria_data)
-
+ 
