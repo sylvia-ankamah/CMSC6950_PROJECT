@@ -11,19 +11,19 @@ pyMannKendall - a python package for non parametric Mann Kendall family of trend
 \begin{document}
 \maketitle
 \section{Introduction}
-The Mannkendall Trend test(sometimes called the M-K test) is used to analyse data collected over time for consistently increasing or decreasing trends(monotonic). It is a non-parametric test which implies it works for all distribution.That is, it is not important for the data set to follow a specific distribution. However, there should not be serial correlation in the data. Minimum order of measurement for the MannKendall trend test is at least eight to ten \\
+The Mannkendall Trend test(sometimes called the M-K test) is used to analyse data collected over time for consistently increasing or decreasing trends(monotonic). It is a non-parametric test which implies it works for all distribution.That is, it is not important for the data set to follow a specific distribution. However, there should not be serial correlation in the data. Minimum order of measurement for the MannKendall trend test is at least eight to ten. \\
 The null hypothesis for the test is: there is no monotonic trend in the series.\\
 The alternative hypothesis for the test is: a trend exists. The trend can be positive or negative.\\
-pyMannKendall is a pure Python implementation of non-parametric Mann-Kendall trend analysis, which bring together almost all types of Mann-Kendall Test. Currently, this package has 11 Mann-Kendall Tests and 2 sen's slope estimator function. Brief description of three of the functions are below:\\
+pyMannKendall is a pure Python implementation of non-parametric Mann-Kendall trend analysis, which brings together almost all types of Mann-Kendall Test. Currently, this package has 11 Mann-Kendall Tests and 2 sen's slope estimator function. Brief description of three of the functions are below:\\
 1. Original Mann-Kendall test (original test): Original Mann-Kendall test is a non-parametric test, which does not consider serial correlation or seasonal effects.\\
-2. Hamed and Rao Modified MK Test (hamed rao modification test): This modified MK test proposed by Hamed and Rao (1998) to address serial auto-correlation issues. They suggested a variance correction approach to improve trend analysis. User can consider first n significant lag by insert lag number in this function. By default, it considered all significant lags.\\
-3. Yue and Wang Modified MK Test (yue wang modification test): This is also a variance correction method for considered serial auto-correlation proposed by Yue, S., and  Wang, C. Y. (2004). User can also set their desired significant n lags for the calculation.\\
+2. Hamed and Rao Modified MK Test (hamed rao modification test): This modified MK test was proposed by Hamed and Rao (1998) to address serial auto-correlation issues. They suggested a variance correction approach to improve trend analysis. User can consider first n significant lag by inserting lag number in this function. By default, it considered all significant lags.\\
+3. Yue and Wang Modified MK Test (yue wang modification test): This is also a variance correction method for considered serial auto-correlation proposed by Yue and  Wang (2004). User can also set their desired significant n lags for the calculation.\\
 This project aims to discuss how the pyMannKendall which is a python package can be used to determine trends in a data set.\\
 
 
 \section{Data description and Analysis}
 \subsection{Data description}
-Three various data sets were used in Analysis.The data sets are secondary data based on number of female births, sales of shampoo and malaria cases. The first data set is based on the daily total female births from the 1st of January, 1959 to the 31st of December, 1959. All three data sets were gathered on monthly basis. Also, the second data set, based on the shampoo sales were gathered over a three year period whiles the third data set, based on recorded Malaria data in the Ashanti region in Ghana, Africa, were based on the period, January, 2010 to December, 2014. There were no missing values in the data sets.Two of the data sets which includes daily total female births and shampoo sales were provided by Hussain et al., (2019).
+Three various data sets were used in the analysis.The data sets are secondary data based on number of female births, sales of shampoo and malaria cases. The first data set is based on the daily total female births from the 1st of January, 1959 to the 31st of December, 1959. All three data sets were gathered on monthly basis. Also, the second data set, based on the shampoo sales were gathered over a three year period whiles the third data set, based on recorded Malaria data in the Ashanti region in Ghana, Africa, were based on the period, January, 2010 to December, 2014. There were no missing values in the data sets.Two of the data sets which includes daily total female births and shampoo sales were provided by Hussain et al., (2019).
 \subsection{Analysis}
 \subsubsection{Female births}
 From the summary statistics, the mean number of births was 41.98 with a minimum value of 23 and a maximum value of 73. The total births over the study period was 365. An autocorrelation plot was obtained and is shown below. From the plot, it can be observed that there is a slight autocorrelation at lag 1 and as such, it was assumed that there is no correlation in the daily total female births. Therefore, the Original Mann Kendall test was used to test the trend.\\
@@ -49,12 +49,12 @@ The Auto-correlation plot indicates that there is autocorrelation in the first l
 		        \label{fig:2}
 \end{figure}
 
-The output obtained from the Hamed and Rao Modified Mk test indicates there is an increasing trend with a p-value of 2.8196e-07(the null hypothesis is rejected).\\ For the other tests not shown here, similar results were obtained. That is Yue and Wang Modified MK Test (yue wang modification test) and Modified MK test using Trend free Pre-Whitening method (trend free pre whitening modification test)\\
+The output obtained from the Hamed and Rao Modified Mk test indicates that there is an increasing trend with a p-value of 2.8196e-07(the null hypothesis is rejected).\\ For the other tests not shown here, similar results were obtained. That is Yue and Wang Modified MK Test (yue wang modification test) and Modified MK test using Trend free Pre-Whitening method (trend free pre whitening modification test)\\
 
 \subsubsection{Malaria Data}
 From the malaria data spanning over a five year period, the minimum number of monthly recorded malaria cases was 36047 and the maximum value was 87765. The mean value was 65317.96. \\ The Auto-correlation plot shows that there is autocorrelation at lag 1 as shown in the chart below. Therefore, a modified MannKendall test was used.\\
 
-\begin{figure}
+\begin{figure}[bp!]
 	    \centering
 	        \includegraphics[width=0.5\textwidth]{MALARIA_DATA_ACF_PLOT.png}
 		    \caption{AUTOCORRELATION PLOT FOR MALARIA DATA}
