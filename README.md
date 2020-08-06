@@ -104,7 +104,7 @@ pip install pymannkendall
 
 Or you can clone the repo and install it:
 
-git clone https://github.com/mmhs013/pymannkendall
+git clone https://github.com/sylvia-ankamah/CMSC6950_PROJECT
 
 cd pymannkendall
 
