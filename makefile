@@ -26,10 +26,10 @@ data3:Malaria_data.csv project.py
 	python3 project.py
 
 Malaria_Trend_plot.png: data3 make_Trend_plot3.py
-	python 3 Trend_plot3.py
+	python3 Trend_plot3.py
 
 MALARIA_DATA_ACF_PLOT.png: data3 make_ACF_plot3.py
-	python 3 ACF_plot3.py
+	python3 ACF_plot3.py
 
 .PHONY: clean almost_clean
 	rm Birth_data_Trend_plot.png
@@ -41,7 +41,7 @@ MALARIA_DATA_ACF_PLOT.png: data3 make_ACF_plot3.py
 	rm Malaria_Trend_plot.png
 	rm MALARIA_DATA_ACF_PLOT.png
 
-
-
 almost_clean:
-	latexmk -c
+		latexmk -c
+
+
