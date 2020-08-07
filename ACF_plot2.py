@@ -2,6 +2,8 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
 
 Shampoo_data=pd.read_csv("shampoo.csv", parse_dates=['Month'],index_col='Month')
 fig, ax = plt.subplots(figsize=(12, 8))
