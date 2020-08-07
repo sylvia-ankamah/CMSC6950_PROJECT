@@ -19,7 +19,7 @@ Malaria_data.csv
 # Dependencies
 
 1.Matplotlib
-i
+
 2.Pandas
 
 3.Numpy
