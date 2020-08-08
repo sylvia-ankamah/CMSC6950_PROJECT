@@ -1,5 +1,5 @@
 #
- CMSC6950:MANNKENDALL TREND TEST
+ CMSC6950:Determining trends in a data set: An Application of pyMannKendall
 
 # SYLVIA ANKAMAH
 
